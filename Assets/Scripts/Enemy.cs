@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Enemy : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class Enemy : MonoBehaviour
     //private GameObject collision;
     //private Vector3 RandomPos;
 
+    public TMP_Text combatLog;
+    
 
     // Start is called before the first frame update
     void Start()

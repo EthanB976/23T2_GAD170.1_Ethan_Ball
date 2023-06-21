@@ -2,24 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using TMPro;
 
 public class PlayerCharacter : MonoBehaviour
 {
     //Variables go first
-    [SerializeField] private double attack = 10;
+    [SerializeField] private int attack = 10;
     [SerializeField] private int health = 100;
     [SerializeField] private int level = 1;
     [SerializeField] private int experience = 0;
     [SerializeField] private double exptolevelup = 50;
-    [SerializeField] private GameObject zahenemy;
+    //[SerializeField] private GameObject zahenemy;
 
     // Methods will go  underneath here
     // we need our player character to attack when you hit the space bar
 
+    public TMP_Text combatLog;
+
     // Start is called before the first frame update
     private void Start()
     {
-
+        combatLog.text = "Ready, Fight!!";
     }
 
     // Update is called once per frame
@@ -30,27 +33,35 @@ public class PlayerCharacter : MonoBehaviour
         {
             // ..... do a thing
             Debug.Log("Space bar has been destroyed!");
-            //LevelUp();
+            Debug.Log("Attack: " + Mathf.Round((float)attack * 100) / 100);
+            combatLog.text = "Attack: " + Mathf.Round((float)attack * 100) / 100;
+
 
         }
+
         if (experience >= exptolevelup)
         {
             LevelUp();
+            //LevelUp();
         }
+
         if (level == 5)
         {
             //player wins
+            combatLog.text = "You Win!!!";
             Debug.Log("You Win!!!!!!!!");
         }
     }
 
     private void LevelUp()
     {
-        attack *= 1.225;
+        //When player levels up, increase attack, level, level exp, and diaplay on screen/in console
+        attack = (int)(attack * 1.225);
         level++;
         exptolevelup *= 1.75;
-        Debug.Log("Level up");
-        Debug.Log("Attack: " + Mathf.Round((float)attack * 100) / 100);
+        combatLog.text = "Level Up";
+        Debug.Log("Level Up");
+        
     }
     /**
      * 

@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Combat : MonoBehaviour
 {
+
+    [SerializeField] PlayerCharacter player;
+    [SerializeField] Enemy enemy;
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +18,15 @@ public class Combat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            //Player attacks and does damage to enemy
+            
+
+
+        }
+
+
     }
 }
