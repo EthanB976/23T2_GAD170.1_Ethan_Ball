@@ -5,8 +5,8 @@ using TMPro;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private double health;
-    [SerializeField] private int level;
+    public double EnemyHealth;
+    public int level;
     //private GameObject collision;
     //private Vector3 RandomPos;
 
@@ -37,11 +37,11 @@ public class Enemy : MonoBehaviour
         //RandomPos.z = 0;
         //Instantiate(Transform.transform,RandomPos,Quaternion.identity);
     }
-    private void takeDamage(double damage)
+    public void takeDamage(double damage)
     {
-        health -= damage;
+        EnemyHealth -= damage;
         Debug.Log("Enemy took " + damage + " damage");
-        if (health <= 0)
+        if (EnemyHealth <= 0)
         {
             OnDeath();
         }
@@ -49,7 +49,7 @@ public class Enemy : MonoBehaviour
     private void Newenemy()
     {
         level = Random.Range(1, 6);
-        health = 5 + 5 * level;
+        EnemyHealth = 5 + 5 * level;
         Debug.Log("A new challenger appears!");
     }
 

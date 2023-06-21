@@ -7,11 +7,12 @@ using TMPro;
 public class PlayerCharacter : MonoBehaviour
 {
     //Variables go first
-    [SerializeField] private int attack = 10;
+    public int attack = 10;
     [SerializeField] private int health = 100;
     [SerializeField] private int level = 1;
-    [SerializeField] private int experience = 0;
-    [SerializeField] private double exptolevelup = 50;
+    public double experience = 0;
+    public double exptolevelup = 50;
+    [SerializeField] private Combat combat;
     //[SerializeField] private GameObject zahenemy;
 
     // Methods will go  underneath here
@@ -36,13 +37,19 @@ public class PlayerCharacter : MonoBehaviour
             Debug.Log("Attack: " + Mathf.Round((float)attack * 100) / 100);
             combatLog.text = "Attack: " + Mathf.Round((float)attack * 100) / 100;
 
-
         }
 
         if (experience >= exptolevelup)
         {
-            LevelUp();
-            //LevelUp();
+
+           if (Input.GetKeyDown(KeyCode.L))
+            {
+                LevelUp();
+                //LevelUp();
+            }
+
+
+
         }
 
         if (level == 5)
