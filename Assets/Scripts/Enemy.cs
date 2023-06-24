@@ -3,62 +3,52 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Enemy : MonoBehaviour
-{
-    public double EnemyHealth;
-    public int level;
+//public class Enemy : MonoBehaviour
+//{
+    //public double EnemyHealth;
+    //public int level;
+    //[SerializeField] PlayerCharacter player;
     //private GameObject collision;
     //private Vector3 RandomPos;
 
-    public TMP_Text combatLog;
-    
+    //public TMP_Text combatLog;
+
+   // private void Newenemy()
+   // {
+    //    level = Random.Range(1, 6);
+     //   EnemyHealth = 5 + 5 * level;
+     //   Debug.Log("A new challenger appears!");
+   // }
 
     // Start is called before the first frame update
-    void Start()
-    {
-        Newenemy();
+    //void Start()
+   // {
+     //   Newenemy();
+     //   Debug.Log("A new challenger appears!");
         //level = Random.Range(1, 6);
         //health = 5 + 5 * level;
         //collision = GetComponent<GameObject>();
-    }
+   // }
 
 
     // Update is called once per frame
-    void Update()
-    {
+    //void Update()
+    //{
         //OnDeath();
-    }
+    //}
 
-    private void OnDeath()
-    {
-        Newenemy();
+   // public void OnDeath()
+    //{
+        //Newenemy();
+       // Debug.Log("Enemie has been slan");
         //RandomPos.x = Random.Range(-3, 4);
         //RandomPos.y = Random.Range(-3, 4);
         //RandomPos.z = 0;
         //Instantiate(Transform.transform,RandomPos,Quaternion.identity);
-    }
-    public void takeDamage(double damage)
-    {
-        EnemyHealth -= damage;
-        Debug.Log("Enemy took " + damage + " damage");
-        if (EnemyHealth <= 0)
-        {
-            OnDeath();
-        }
-    }
-    private void Newenemy()
-    {
-        level = Random.Range(1, 6);
-        EnemyHealth = 5 + 5 * level;
-        Debug.Log("A new challenger appears!");
-    }
+    //}
+   
 
-
-
-
-
-
-}
+//}
 
 
 
