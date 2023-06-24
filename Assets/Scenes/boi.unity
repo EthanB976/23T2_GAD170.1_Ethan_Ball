@@ -221,8 +221,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adf2d972a97a3934c9b81840a97fddbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
+  EnemyHealth: 0
   level: 0
+  player: {fileID: 0}
   combatLog: {fileID: 0}
 --- !u!212 &884991472
 SpriteRenderer:
@@ -303,6 +304,8 @@ GameObject:
   - component: {fileID: 886841572}
   - component: {fileID: 886841574}
   - component: {fileID: 886841571}
+  - component: {fileID: 886841575}
+  - component: {fileID: 886841576}
   m_Layer: 0
   m_Name: Triangle
   m_TagString: Untagged
@@ -327,6 +330,8 @@ MonoBehaviour:
   level: 1
   experience: 0
   exptolevelup: 50
+  EnemyHealth: 0
+  enemylevel: 0
   combatLog: {fileID: 929829526}
 --- !u!212 &886841572
 SpriteRenderer:
@@ -388,7 +393,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 886841570}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.82, y: 0.15, z: 0}
+  m_LocalPosition: {x: 5.79, y: 0.12, z: 0}
   m_LocalScale: {x: 5.010971, y: 2.9503987, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -407,6 +412,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acc1a9281e829f243a4b640f85fd7fd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &886841575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 886841570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74a752fc57983294f91a1df7640f1d4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  enemy: {fileID: 0}
+--- !u!114 &886841576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 886841570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adf2d972a97a3934c9b81840a97fddbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnemyHealth: 0
+  level: 0
+  player: {fileID: 0}
+  combatLog: {fileID: 0}
 --- !u!1 &929829523
 GameObject:
   m_ObjectHideFlags: 0
